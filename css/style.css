@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+:root {
+    /* --transition: 1.5s  linear; */
+    --index: calc(1vw  + 1vh);
+}
+.layers{
+    perspective: 1000px;
+    overflow: hidden;
+
+}
+.layers__conteiner{
+    height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transform: rotateY(var(--move-x)) rotateX(var(--move-y));
+    /* transition: transform 1s ease; */
+}
+
+.layers__item{
+    inset: -5vw;
+    position: absolute;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.layers-1 {
+    height: 100%;
+    transform: translateZ(-55px) scale(1.4);
+}
+.layers-2 {
+    transform: translateZ(40px) scale(.9);
+}
+.layers-5 {
+    transform: translateZ(60px) scale(.9);
+}
+.layers-6 {
+    transform: translateZ(80px) scale(.9);
+}
+
+.logo{
+    --logo-size: calc(var(--index) * 5);
+    position: absolute;
+    width: var( --logo-size);
+    height: var( --logo-size);
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1;
+    top: calc(var(--index) * 2);
+    left: calc(50%  - calc(var(--logo-size) / 2));
+}
+
+.layers-4 {
+    transform: translateZ(120px) scale(1.1);
+    width: 100vw;
+    height: 100vh;
+}
+
+.layers-4 canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.layers-3 {
+    transform: translateZ(40px);
+}
+.layers__content h1 {
+    font-size: calc(var(--index) * 3.3);
+    line-height: 130%;
+    letter-spacing: calc(var(--index) * .05);
+}
